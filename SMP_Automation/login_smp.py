@@ -64,17 +64,17 @@ def SMP_login_valid(username,password):
     driver.refresh()
     sleep(5)
 
-    user_dropdown = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "(//span[@role='img'])[1]"))
-    )
-
-    # Click on the element
-    user_dropdown.click()
-    logout = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "(//li[@role = 'menuitem'])[8]"))
-    )
-    logout.click()
-    sleep(5)
+    # user_dropdown = WebDriverWait(driver, 10).until(
+    #     EC.element_to_be_clickable((By.XPATH, "(//span[@role='img'])[1]"))
+    # )
+    #
+    # # Click on the element
+    # user_dropdown.click()
+    # logout = WebDriverWait(driver, 10).until(
+    #     EC.element_to_be_clickable((By.XPATH, "(//li[@role = 'menuitem'])[9]"))
+    # )
+    # logout.click()
+    # sleep(5)
 
 def SMP_login_invalid(username,password):
     sleep(5)
