@@ -1,19 +1,7 @@
-import time
 import pytest
-from time import sleep
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from _testinternalcapi import get_config
-from configparser import ConfigParser
-# from login import SMP_login_valid
 from login_smp import SMP_login_valid,SMP_login_invalid
-
-
-def get_config(category, key):
-    config = ConfigParser()
-    config.read("config.ini")
-    return config.get(category, key)
+from utils.config_reader import get_config
 
 
 def test_SMP_login_valid():

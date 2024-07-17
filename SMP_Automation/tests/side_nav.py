@@ -6,18 +6,10 @@ from _testinternalcapi import get_config
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
-
-
-def get_config(category, key):
-    config = ConfigParser()
-    config.read("config.ini")
-    return config.get(category, key)
-
+from utils.config_reader import get_config
 
 
 driver = webdriver.Chrome()
-# url = "https://example.com"
-# driver.get(url)
 
 def test_side_navbar():
         login_url = get_config("login", "url")

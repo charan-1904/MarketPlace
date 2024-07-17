@@ -3,8 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from configparser import ConfigParser
-from _testinternalcapi import get_config
+# from _testinternalcapi import get_config
 from time import sleep
+from utils.config_reader import get_config
+
 
 
 
@@ -14,10 +16,10 @@ driver = webdriver.Chrome()
 
 
 
-def get_config(category, key):
-    config = ConfigParser()
-    config.read("config.ini")
-    return config.get(category, key)
+# def get_config(category, key):
+#     config = ConfigParser()
+#     config.read("config.ini")
+#     return config.get(category, key)
 
 def SMP_login_valid(username,password):
     driver = webdriver.Chrome()
