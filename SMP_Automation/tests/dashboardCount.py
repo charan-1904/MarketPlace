@@ -13,6 +13,14 @@ def test_dashboardCount(driver,login):
     prod_temp = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.XPATH,get_config('dashboard','product_templates'))))
     print("No. of Product Templates:", prod_temp.text.strip().replace('\n', ' '))
 
+    prod_div = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, get_config('dashboard', 'prod_div'))))
+    #iteratewithin the div class
+    items = prod_div.find_elements(By.XPATH, ".//main[@class='ant-layout-content mt-3 flex space-x-16  css-w3qpxn']")
+
+    for item in items:
+        print(item.text.strip())
+
     products = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.XPATH,get_config('dashboard','products'))))
     print("No. of Products:", products.text.strip().replace('\n', ' '))
 
